@@ -1,0 +1,23 @@
+version: "3.8"
+
+
+services:
+  xxl-job-admin:
+    image: aak1247/xxl-job-admin:2.3.1
+    container_name: xxl-job-admin
+    restart: always
+    environment:
+      PORT: 8080
+      DATASOURCE_URL: jdbc:postgresql://127.0.0.1:5432/xxl_job?user=root&password=password
+      DATASOURCE_DRIVER: org.postgresql.Driver
+      MAIL_HOST: smtp.qq.com
+      MAIL_PORT: 465
+      MAIL_USERNAME: xxx@qq.com
+      MAIL_PASSWORD: password
+      MAIL_FROM: xxx@qq.com
+      MAIL_SMTP_AUTH: "true"
+      MAIL_SMTP_STARTTLS_ENABLE: "true"
+      MAIL_SMTP_STARTTLS_REQUIRED: "true"
+      MAIL_SMTP_SOCKET_FACTORY_CLASS: javax.net.ssl.SSLSocketFactory
+    ports:
+      - "8080:8080"
